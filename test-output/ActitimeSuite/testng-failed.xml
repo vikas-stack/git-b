@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [ActitimeSuite]">
+  <listeners>
+    <listener class-name="generic.TestngListeners"/>
+  </listeners>
+  <test name="SmokeTest">
+    <classes>
+      <class name="scripts.TestValidLogin"/>
+      <class name="scripts.Demo"/>
+      <class name="scripts.TestInvalidLogin"/>
+    </classes>
+  </test> <!-- SmokeTest -->
+  <test name="SmokeTest(failed)">
+    <classes>
+      <class name="scripts.TestInvalidLogin">
+        <methods>
+          <include name="launchApplication"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- scripts.TestInvalidLogin -->
+      <class name="scripts.TestValidLogin">
+        <methods>
+          <include name="testInvalidLogin"/>
+          <include name="launchApplication"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- scripts.TestValidLogin -->
+      <class name="scripts.Demo">
+        <methods>
+          <include name="createUser"/>
+          <include name="launchApplication"/>
+          <include name="closeApplication"/>
+          <include name="deleteUser"/>
+        </methods>
+      </class> <!-- scripts.Demo -->
+    </classes>
+  </test> <!-- SmokeTest(failed) -->
+</suite> <!-- Failed suite [ActitimeSuite] -->
